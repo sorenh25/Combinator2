@@ -23,6 +23,7 @@ public:
   void getArgument(unsigned int start, unsigned int& end);
   void cut(int, int);
   void rmSingleElementParenthesis();
+  //void rmFirstParenthesis();
 
 private:
   std::string inputFileName;

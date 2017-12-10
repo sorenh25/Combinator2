@@ -90,6 +90,9 @@ bool Combinator::variablesAvailable(unsigned int& index, int number) {
   while (i > 0) {
     unsigned int start, end;
     start = i - 1;
+    if (start == 0) {
+      break;
+    }
     if (computationString[start] != '(') {
       break;
     }
@@ -166,13 +169,18 @@ void Combinator::computeString() {
   }
   rmSingleElementParenthesis();
   unsigned int start, end;
-  start = 0;
-  getArgument(start, end);
-  if (computationString[start] == '(' && computationString[end] == ')') {
-    if (end == computationString.length() - 1) {
-      cut(end, end);
-      cut(start, start);
+  bool test = true;
+  while (test) {
+    start = 0;
+    getArgument(start, end);
+    if (computationString[start] == '(' && computationString[end] == ')') {
+      if (end == computationString.length() - 1) {
+        cut(end, end);
+        cut(start, start);
+        continue;
+      }
     }
+    test = false;
   }
   cout << "=>"<< computationString << endl;
 }
@@ -266,3 +274,15 @@ void Combinator::rmSingleElementParenthesis() {
     }
   }
 }
+
+/*
+void Combinator::rmFirstParenthesis() {
+  unsigned int start, end;
+  start = 0;
+  getArgument(start, end);
+  if (computationString[start] == '(' && computationString[end] == ')') {
+    cut(end, end);
+    cut(start, start);
+  }
+}
+*/
