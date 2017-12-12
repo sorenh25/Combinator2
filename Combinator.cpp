@@ -78,6 +78,22 @@ bool Combinator::findLeftMost(unsigned int& index, char& function) {
       }
       continue;
     }
+    if (computationString[i] == 'Y') {
+      if (variablesAvailable(i, 2)) {
+        function = 'Y';
+        index = i;
+        return true;
+      }
+      continue;
+    }
+    if (computationString[i] == 'B') {
+      if (variablesAvailable(i, 3)) {
+        function = 'B';
+        index = i;
+        return true;
+      }
+      continue;
+    }
   }
   return false;
 }
@@ -161,6 +177,14 @@ void Combinator::computeString() {
       S(index);
       cout << "=>"<< computationString << endl;
     }
+    else if (variable == 'Y' && function == 'Y') {
+      Y(index);
+      cout << "=>"<< computationString << endl;
+    }
+    else if (variable == 'B' && function == 'B') {
+      B(index);
+      cout << "=>"<< computationString << endl;
+    }
     else if (variable != function) {
       cerr << "Variable does not equal function after findLemost" << endl;
       cout << variable << " function " << function << " " << computationString << index << endl;
@@ -228,6 +252,47 @@ void Combinator::S(unsigned int index) {
   //cout << "computationString " << computationString << endl;
   cut(index, index);
   //cout << "computationString " << computationString << endl;
+}
+
+void Combinator::Y(unsigned int index) {
+  if (computationString[index] != 'Y') {
+    cerr << "No 'Y' to replace " << computationString << endl;
+    return;
+  }
+  unsigned int startOne, endOne, startTwo, endTwo;
+  startOne = index + 1;
+  getArgument(startOne, endOne);
+  startTwo = endOne + 1;
+  getArgument(startTwo, endTwo);
+  string begin, one, two, end;
+  begin = computationString.substr(0, startOne);
+  one = computationString.substr(startOne, endOne - startOne + 1);
+  two = computationString.substr(startTwo, endTwo - startTwo + 1);
+  end = computationString.substr(endTwo + 1);
+  computationString = begin + one + "(" + 'Y' + one + ')' + two + end;
+  cut(index, index);
+}
+
+void Combinator::B(unsigned int index) {
+  if (computationString[index] != 'B') {
+    cerr << "No 'B' to replace " << computationString << endl;
+    return;
+  }
+  unsigned int startOne, endOne, startTwo, endTwo, startThree, endThree;
+  startOne = index + 1;
+  getArgument(startOne, endOne);
+  startTwo = endOne + 1;
+  getArgument(startTwo, endTwo);
+  startThree = endTwo + 1;
+  getArgument(startThree, endThree);
+  string begin, two, three, end;
+  begin = computationString.substr(0, startTwo);
+  two = computationString.substr(startTwo, endTwo - startTwo + 1);
+  three = computationString.substr(startThree, endThree - startThree + 1);
+  end = computationString.substr(endThree + 1);
+
+  computationString = begin + "(" + three + two + ')' + end;
+  cut(index, index);
 }
 
 void Combinator::cut(int startIndex, int endIndex) {

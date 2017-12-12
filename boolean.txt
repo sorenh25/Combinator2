@@ -1,0 +1,12 @@
+Kab
+SKab
+(K)(SK)(K)ab
+(SK)(SK)(K)ab
+(K)K(K)ab
+(K)K(SK)ab
+(SK)K(K)ab
+(SK)K(SK)ab
+(K)(K)(SK)ab
+(SK)(K)(SK)ab
+(K)(SK)(SK)ab
+(SK)(SK)(SK)ab

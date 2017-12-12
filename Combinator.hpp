@@ -19,6 +19,8 @@ public:
   void I(unsigned int index);
   void K(unsigned int index);
   void S(unsigned int index);
+  void Y(unsigned int index);
+  void B(unsigned int index);
 
   void getArgument(unsigned int start, unsigned int& end);
   void cut(int, int);
