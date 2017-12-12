@@ -1,0 +1,21 @@
+g++ -Wall main.cpp Combinator.o -std=gnu++11 -static-libstdc++ -o Combinator-teamSorenHolm
+Combinator-teamSorenHolm testFiles/I.txt
+Computation on: (Ia)
+=>(a)
+=>a
+Computation on: ((Ia)(Ib))
+=>(a(Ib))
+=>(ab)
+=>ab
+Computation on: ((Ib)a)
+=>(ba)
+=>ba
+Computation on: (I((Ia)(Ib)))
+=>(((Ia)(Ib)))
+=>((a(Ib)))
+=>((ab))
+=>ab
+Computation on: ((Ib)(ab)(Ia))
+=>(b(ab)(Ia))
+=>(b(ab)a)
+=>b(ab)a

@@ -1,0 +1,18 @@
+g++ -Wall main.cpp Combinator.o -std=gnu++11 -static-libstdc++ -o Combinator-teamSorenHolm
+Combinator-teamSorenHolm testFiles/S.txt
+Computation on: (Sabc)
+=>(ac(bc))
+=>ac(bc)
+Computation on: ((Sbac)(Scab))
+=>(bc(ac)(Scab))
+=>(bc(ac)cb(ab))
+=>bc(ac)cb(ab)
+Computation on: (Sa(bc)b)
+=>(ab((bc)b))
+=>ab((bc)b)
+Computation on: (S(cc)(aa)(bb))
+=>((cc)(bb)((aa)(bb)))
+=>(cc)(bb)((aa)(bb))
+Computation on: (Sbcaabc)
+=>(ba(ca)abc)
+=>ba(ca)abc

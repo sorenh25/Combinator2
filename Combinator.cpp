@@ -291,7 +291,7 @@ void Combinator::B(unsigned int index) {
   three = computationString.substr(startThree, endThree - startThree + 1);
   end = computationString.substr(endThree + 1);
 
-  computationString = begin + "(" + three + two + ')' + end;
+  computationString = begin + "(" + two + three + ')' + end;
   cut(index, index);
 }
 

@@ -1,0 +1,35 @@
+g++ -Wall main.cpp Combinator.o -std=gnu++11 -static-libstdc++ -o Combinator-teamSorenHolm
+Combinator-teamSorenHolm testFiles/complex.txt
+Computation on: (SKKb)
+=>(Kb(Kb))
+=>(b)
+=>b
+Computation on: (SKba)
+=>(Ka(ba))
+=>(a)
+=>a
+Computation on: (I(SKab)I(SKKa)b)
+=>((SKab)I(SKKa)b)
+=>(Kb(ab)I(SKKa)b)
+=>(bI(SKKa)b)
+=>(b(SKKa)b)
+=>(bKa(Ka)b)
+=>(bab)
+=>bab
+Computation on: ((S(K(SI))Kba))
+=>((K(SI))b(Kb)a)
+=>((SI)(Kb)a)
+=>(Ia((Kb)a))
+=>(a((Kb)a))
+=>(a(b))
+=>ab
+Computation on: ((S(K(SI))(S(KK)I)ab))
+=>((K(SI))a((S(KK)I)a)b)
+=>((SI)((S(KK)I)a)b)
+=>(Ib(((S(KK)I)a)b))
+=>(b(((S(KK)I)a)b))
+=>(b(((KK)a(Ia))b))
+=>(b((K(Ia))b))
+=>(b((Ia)))
+=>(b(a))
+=>ba

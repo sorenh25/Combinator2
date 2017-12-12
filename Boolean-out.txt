@@ -1,0 +1,59 @@
+g++ -Wall main.cpp Combinator.o -std=gnu++11 -static-libstdc++ -o Combinator-teamSorenHolm
+Combinator-teamSorenHolm boolean.txt
+Computation on: (Kab)
+=>(a)
+=>a
+Computation on: (SKab)
+=>(Kb(ab))
+=>(b)
+=>b
+Computation on: ((K)(SK)(K)ab)
+=>((SK)ab)
+=>(Kb(ab))
+=>(b)
+=>b
+Computation on: ((SK)(SK)(K)ab)
+=>(K(K)((SK)(K))ab)
+=>((K)ab)
+=>(a)
+=>a
+Computation on: ((K)K(K)ab)
+=>(Kab)
+=>(a)
+=>a
+Computation on: ((K)K(SK)ab)
+=>(Kab)
+=>(a)
+=>a
+Computation on: ((SK)K(K)ab)
+=>(K(K)(K(K))ab)
+=>((K)ab)
+=>(a)
+=>a
+Computation on: ((SK)K(SK)ab)
+=>(K(SK)(K(SK))ab)
+=>((SK)ab)
+=>(Kb(ab))
+=>(b)
+=>b
+Computation on: ((K)(K)(SK)ab)
+=>((K)ab)
+=>(a)
+=>a
+Computation on: ((SK)(K)(SK)ab)
+=>(K(SK)((K)(SK))ab)
+=>((SK)ab)
+=>(Kb(ab))
+=>(b)
+=>b
+Computation on: ((K)(SK)(SK)ab)
+=>((SK)ab)
+=>(Kb(ab))
+=>(b)
+=>b
+Computation on: ((SK)(SK)(SK)ab)
+=>(K(SK)((SK)(SK))ab)
+=>((SK)ab)
+=>(Kb(ab))
+=>(b)
+=>b

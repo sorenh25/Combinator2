@@ -15,3 +15,9 @@ runS: main
 
 runC: main
 	Combinator-teamSorenHolm testFiles/complex.txt
+
+runB: main
+	Combinator-teamSorenHolm boolean.txt
+
+runBO: main
+	Combinator-teamSorenHolm bonus.txt
